@@ -26,7 +26,7 @@ const forecast = (latitude, longitude, callback) => {
         }
         else {
             const Location = body.daily[0].weather[0].description
-            callback(undefined, Location.charAt(0).toUpperCase() + Location.slice(1) + ". It is currently " + body.current.temp + " degrees out. There is a " + body.current.clouds + "% chance of rain.")
+            callback(undefined, Location.charAt(0).toUpperCase() + Location.slice(1) + ". It is currently " + body.current.temp + " degrees out. The maximum temperature is " + body.daily[0].temp.max + " and the minimum temperature is " + body.daily[0].temp.min +  ". There is a " + body.current.clouds + "% chance of rain.")
         }
     })
 }
